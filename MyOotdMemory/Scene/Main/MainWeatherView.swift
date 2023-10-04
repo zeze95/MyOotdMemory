@@ -11,7 +11,7 @@ import Kingfisher
 class MainWeatherView: BaseView  {
     var MainData :String?
     var MainTF : Bool = false
-    
+
     
     lazy var subTitle = SubTitleLabel(text: MainTF ? "현재 날씨" : "내일 날씨")
     var viewImg : UIImageView = {
@@ -31,11 +31,13 @@ class MainWeatherView: BaseView  {
        let view = UILabel()
         view.text = "비내리는 날"
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.textColor = Constants.BaseColor.text
         return view
     }()
     var nowTemp :UILabel = {
         let view = UILabel()
          view.text = "강수량 시간당 얼마"
+        view.textColor = Constants.BaseColor.text
         view.translatesAutoresizingMaskIntoConstraints = false
          return view
     }()
@@ -83,6 +85,7 @@ class MainWeatherView: BaseView  {
             make.top.equalTo(nowWeather.snp.bottom).offset(4)
             make.leading.equalTo(viewImg.snp.trailing).offset(8)
             make.trailing.equalToSuperview()
+            
             make.height.equalTo(38)
         }
     }

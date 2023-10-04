@@ -18,7 +18,8 @@ class BaseViewController: UIViewController {
     
 
      func configureView(){
-        view.backgroundColor = .white
+         view.backgroundColor = Constants.BaseColor.backgroundColor
+         view.layer.backgroundColor = Constants.BaseColor.backgroundColor.cgColor
          view.tintColor = .black
          // 다크 모드 변경 하기,,,
     }

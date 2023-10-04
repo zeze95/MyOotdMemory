@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		4C09E28D2ACBE3680060CCAE /* SubTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C09E28C2ACBE3680060CCAE /* SubTitleLabel.swift */; };
+		4C30F1002ACC21A600B64475 /* dateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30F0FF2ACC21A600B64475 /* dateFormatter.swift */; };
+		4C30F1022ACC2EE400B64475 /* CreateTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30F1012ACC2EE400B64475 /* CreateTodayView.swift */; };
+		4C30F13A2ACD631800B64475 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 4C30F1392ACD631800B64475 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		4C30F13C2ACD631800B64475 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4C30F13B2ACD631800B64475 /* FirebaseCrashlytics */; };
+		4C30F1432ACD668C00B64475 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C30F1422ACD668C00B64475 /* GoogleService-Info.plist */; };
+		4C30F1452ACD6F5300B64475 /* CreateTempCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30F1442ACD6F5300B64475 /* CreateTempCollectionCell.swift */; };
 		4C37A0672ABF11FE00334E9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0662ABF11FE00334E9A /* AppDelegate.swift */; };
 		4C37A0692ABF11FE00334E9A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0682ABF11FE00334E9A /* SceneDelegate.swift */; };
 		4C37A06B2ABF11FE00334E9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A06A2ABF11FE00334E9A /* ViewController.swift */; };
@@ -49,6 +55,10 @@
 
 /* Begin PBXFileReference section */
 		4C09E28C2ACBE3680060CCAE /* SubTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTitleLabel.swift; sourceTree = "<group>"; };
+		4C30F0FF2ACC21A600B64475 /* dateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateFormatter.swift; sourceTree = "<group>"; };
+		4C30F1012ACC2EE400B64475 /* CreateTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodayView.swift; sourceTree = "<group>"; };
+		4C30F1422ACD668C00B64475 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "MyOotdMemory/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4C30F1442ACD6F5300B64475 /* CreateTempCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTempCollectionCell.swift; sourceTree = "<group>"; };
 		4C37A0632ABF11FE00334E9A /* MyOotdMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyOotdMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C37A0662ABF11FE00334E9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C37A0682ABF11FE00334E9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,7 +104,9 @@
 				4C37A0C72AC881E300334E9A /* SnapKit in Frameworks */,
 				4C37A0A82AC8200900334E9A /* FSCalendar in Frameworks */,
 				4C37A0A52AC81FFD00334E9A /* Toast in Frameworks */,
+				4C30F13C2ACD631800B64475 /* FirebaseCrashlytics in Frameworks */,
 				4C37A0A02AC81FEB00334E9A /* Realm in Frameworks */,
+				4C30F13A2ACD631800B64475 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +150,7 @@
 				4C37A0662ABF11FE00334E9A /* AppDelegate.swift */,
 				4C37A0682ABF11FE00334E9A /* SceneDelegate.swift */,
 				4C37A06A2ABF11FE00334E9A /* ViewController.swift */,
+				4C30F1422ACD668C00B64475 /* GoogleService-Info.plist */,
 				4C37A06F2ABF120000334E9A /* Assets.xcassets */,
 				4C37A0712ABF120000334E9A /* LaunchScreen.storyboard */,
 				4C37A0742ABF120000334E9A /* Info.plist */,
@@ -180,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				4C37A0BC2AC82D8D00334E9A /* CreateViewController.swift */,
+				4C30F1012ACC2EE400B64475 /* CreateTodayView.swift */,
+				4C30F1442ACD6F5300B64475 /* CreateTempCollectionCell.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -205,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				4C37A08F2ABF1F4E00334E9A /* ConstantsColor.swift */,
+				4C30F0FF2ACC21A600B64475 /* dateFormatter.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -317,6 +333,8 @@
 				4C37A0A42AC81FFD00334E9A /* Toast */,
 				4C37A0A72AC8200900334E9A /* FSCalendar */,
 				4C37A0C62AC881E300334E9A /* SnapKit */,
+				4C30F1392ACD631800B64475 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				4C30F13B2ACD631800B64475 /* FirebaseCrashlytics */,
 			);
 			productName = MyOotdMemory;
 			productReference = 4C37A0632ABF11FE00334E9A /* MyOotdMemory.app */;
@@ -353,6 +371,7 @@
 				4C37A0A32AC81FFD00334E9A /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				4C37A0A62AC8200900334E9A /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				4C37A0C52AC881E300334E9A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				4C30F1382ACD631800B64475 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 4C37A0642ABF11FE00334E9A /* Products */;
 			projectDirPath = "";
@@ -369,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C37A0732ABF120000334E9A /* LaunchScreen.storyboard in Resources */,
+				4C30F1432ACD668C00B64475 /* GoogleService-Info.plist in Resources */,
 				4C37A0702ABF120000334E9A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,13 +413,16 @@
 				4C37A0D12AC9A6D000334E9A /* DateDiaryView.swift in Sources */,
 				4C37A0AC2AC8207C00334E9A /* weatherManager.swift in Sources */,
 				4C37A0B92AC82D7700334E9A /* MainViewController.swift in Sources */,
+				4C30F1022ACC2EE400B64475 /* CreateTodayView.swift in Sources */,
 				4C37A0BD2AC82D8D00334E9A /* CreateViewController.swift in Sources */,
+				4C30F1452ACD6F5300B64475 /* CreateTempCollectionCell.swift in Sources */,
 				4C37A0C92AC8851C00334E9A /* MainAdviceView.swift in Sources */,
 				4C37A0692ABF11FE00334E9A /* SceneDelegate.swift in Sources */,
 				4C37A0AF2AC8208A00334E9A /* APIKey.swift in Sources */,
 				4C09E28D2ACBE3680060CCAE /* SubTitleLabel.swift in Sources */,
 				4C37A0BB2AC82D8200334E9A /* DateViewController.swift in Sources */,
 				4C37A0CD2AC8915600334E9A /* BaseCollectionViewCell.swift in Sources */,
+				4C30F1002ACC21A600B64475 /* dateFormatter.swift in Sources */,
 				4C37A0CF2AC89C8100334E9A /* MainAdviceScrollView.swift in Sources */,
 				4C37A0D72AC9D63400334E9A /* DateDiaryCollectionView.swift in Sources */,
 				4C37A0892ABF1E1800334E9A /* BaseView.swift in Sources */,
@@ -552,6 +575,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 847TUT63WB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyOotdMemory/Info.plist;
@@ -625,6 +649,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4C30F1382ACD631800B64475 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.16.0;
+			};
+		};
 		4C37A0932AC81FAA00334E9A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -676,6 +708,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4C30F1392ACD631800B64475 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C30F1382ACD631800B64475 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		4C30F13B2ACD631800B64475 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C30F1382ACD631800B64475 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
 		4C37A0942AC81FAA00334E9A /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4C37A0932AC81FAA00334E9A /* XCRemoteSwiftPackageReference "Kingfisher" */;

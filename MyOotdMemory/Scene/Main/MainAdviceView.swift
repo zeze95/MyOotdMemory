@@ -11,7 +11,7 @@ import SnapKit
 class MainAdviceView: BaseView {
     let dataSource: [UIColor] = [.orange, .brown, .blue, .gray, .cyan]
     var subTitle = SubTitleLabel(text: "오늘의 추천 옷차림")
-
+    
     lazy var adviceCollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         view.register(MainAdviceCollectionViewCell.self, forCellWithReuseIdentifier: "MainAdviceCollectionViewCell")
@@ -25,7 +25,10 @@ class MainAdviceView: BaseView {
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 0
         let size = UIScreen.main.bounds.width - 40 //self.frame.width
-        layout.itemSize = CGSize(width: size / 2, height: 150)
+        DispatchQueue.main.async {
+            lazy var heig = self.frame.height
+             layout.itemSize = CGSize(width: size / 2, height: heig )
+        }
         return layout
     }
     override func configure() {
@@ -45,7 +48,7 @@ class MainAdviceView: BaseView {
             make.top.equalTo(subTitle.snp.bottom).offset(4)
             make.leading.equalTo(subTitle.snp.leading)
             make.trailing.equalTo(subTitle.snp.trailing)
-            make.height.equalTo(150)
+            make.bottom.equalToSuperview()
             
         }
     }

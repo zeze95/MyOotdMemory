@@ -9,7 +9,7 @@ import UIKit
 
 class SubTitleLabel :UIView  {
     
-    private let label: UILabel
+   let label: UILabel
 
      init(text: String) {
          label = UILabel()

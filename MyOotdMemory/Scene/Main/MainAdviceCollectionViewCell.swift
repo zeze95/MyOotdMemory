@@ -11,7 +11,6 @@ class MainAdviceCollectionViewCell: BaseCollectionViewCell {
     
     let imageView = {
         let view = UIImageView()
-        
         return view
     }()
       
@@ -21,7 +20,7 @@ class MainAdviceCollectionViewCell: BaseCollectionViewCell {
     
     override func setConstraints() {
         imageView.snp.makeConstraints { make in
-            make.edges.equalTo(contentView)
+            make.edges.equalToSuperview()
         }
     }
 }

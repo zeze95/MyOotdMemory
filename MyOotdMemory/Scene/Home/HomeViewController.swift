@@ -12,19 +12,23 @@ class HomeViewController: UITabBarController{
         super.viewDidLoad()
         configureTabBar()
         settingTabbar()
+        settingNavBar()
+        view.backgroundColor = Constants.BaseColor.backgroundColor
+    }
+    
+    func settingNavBar() {
         self.navigationController?.isNavigationBarHidden = true
-        view.backgroundColor = .white
         title = "추천 옷차림"
         let navigationItem = self.navigationItem
     
-        let addButtonImg = UIImage(systemName: "square.and.pencil.circle")
+        let addButtonImg = UIImage(systemName: "square.and.pencil")
         let addButton = UIBarButtonItem(image: addButtonImg, style: .plain, target: self, action: #selector(addButtonClicked))
         addButton.tintColor = .red
-//        navigationItem.titleView?.tintColor = .blue
-        // 글자 색상 안보이는 거랑 맨 처음 접속시 밑에 이상하게 뜨는거 수정해야함;
         navigationItem.rightBarButtonItem = addButton
-   
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+
     }
+    
     @objc func addButtonClicked() {
         // 오른쪽 버튼(Add 버튼)이 탭됐을 때의 동작 구현
         // 여기서 오늘 중으로 글쓴 것이 있는지 확인하고 오늘 것을 수정하시겠습니까?
@@ -36,6 +40,8 @@ class HomeViewController: UITabBarController{
     
     func configureTabBar(){
         tabBar.tintColor = .black
+        let tabBarColor = UIColor(red: 252.0 / 255.0, green: 180.0  / 255.0, blue: 130.0 / 255.0, alpha: 1.0)
+        tabBar.backgroundColor = Constants.BaseColor.backgroundColorAlpha
         let MainVC = MainViewController()
         MainVC.tabBarItem = UITabBarItem(title: "추천 옷차림", image: UIImage(systemName: "thermometer.low"),selectedImage: UIImage(systemName: "thermometer.high"))
         

@@ -23,8 +23,8 @@ class MainViewController: BaseViewController {
     
     let adviceView : MainAdviceView = {
         let view = MainAdviceView(frame: .zero)
-        view.backgroundColor = .red
         return view
+        // 밑에 줄 넣어서 구분할지 말지 나중에 정하기
     }()
     let afterView : MainWeatherView = {
         let view = MainWeatherView(frame: .zero)
@@ -35,8 +35,9 @@ class MainViewController: BaseViewController {
     override func configureView() {
         view.addSubview(scrollWrapperView)
         scrollWrapperView.addSubview(nowView)
-        scrollWrapperView.addSubview(adviceView)
+     
         scrollWrapperView.addSubview(afterView)
+        scrollWrapperView.addSubview(adviceView)
     }
     
     override func setConstraints() {
@@ -54,12 +55,13 @@ class MainViewController: BaseViewController {
             make.top.equalTo(nowView.snp.bottom).offset(16)
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(16)
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
-            make.bottom.equalTo(afterView.snp.top)
+            make.height.equalTo(250)
         }
         afterView.snp.makeConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(adviceView.snp.bottom).offset(16)
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(16)
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
+            make.bottom.equalTo(scrollWrapperView.snp.bottom)
             make.height.equalTo(110)
         }
     }
