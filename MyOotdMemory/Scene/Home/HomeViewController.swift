@@ -7,13 +7,16 @@
 
 import UIKit
 
+
 class HomeViewController: UITabBarController{
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTabBar()
         settingTabbar()
         settingNavBar()
         view.backgroundColor = Constants.BaseColor.backgroundColor
+
     }
     
     func settingNavBar() {
@@ -70,6 +73,5 @@ class HomeViewController: UITabBarController{
     }
     
 }
-
 
 

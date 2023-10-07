@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		100B5D972AD1A67D0058D57D /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100B5D962AD1A67D0058D57D /* WeatherRepository.swift */; };
+		10BB636F2AD120860040A0BB /* NetworkBasic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB636E2AD120860040A0BB /* NetworkBasic.swift */; };
+		10BB63712AD122D40040A0BB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB63702AD122D40040A0BB /* Network.swift */; };
+		10BB63782AD12A100040A0BB /* weatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB63772AD12A100040A0BB /* weatherManager.swift */; };
+		10BB637A2AD12A4D0040A0BB /* wather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB63792AD12A4D0040A0BB /* wather.swift */; };
+		10BB637C2AD12A640040A0BB /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB637B2AD12A640040A0BB /* APIKey.swift */; };
+		10BB637E2AD12E470040A0BB /* WeatherTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB637D2AD12E470040A0BB /* WeatherTable.swift */; };
+		10BB63862AD141A40040A0BB /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB63852AD141A40040A0BB /* Location.swift */; };
 		4C09E28D2ACBE3680060CCAE /* SubTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C09E28C2ACBE3680060CCAE /* SubTitleLabel.swift */; };
 		4C30F1002ACC21A600B64475 /* dateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30F0FF2ACC21A600B64475 /* dateFormatter.swift */; };
 		4C30F1022ACC2EE400B64475 /* CreateTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C30F1012ACC2EE400B64475 /* CreateTodayView.swift */; };
@@ -28,12 +36,9 @@
 		4C37A0A22AC81FEB00334E9A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4C37A0A12AC81FEB00334E9A /* RealmSwift */; };
 		4C37A0A52AC81FFD00334E9A /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 4C37A0A42AC81FFD00334E9A /* Toast */; };
 		4C37A0A82AC8200900334E9A /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 4C37A0A72AC8200900334E9A /* FSCalendar */; };
-		4C37A0AC2AC8207C00334E9A /* weatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0AA2AC8207C00334E9A /* weatherManager.swift */; };
-		4C37A0AD2AC8207C00334E9A /* weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0AB2AC8207C00334E9A /* weather.swift */; };
-		4C37A0AF2AC8208A00334E9A /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0AE2AC8208A00334E9A /* APIKey.swift */; };
 		4C37A0B12AC8249D00334E9A /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0B02AC8249D00334E9A /* DiaryModel.swift */; };
 		4C37A0B32AC824B300334E9A /* DiaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0B22AC824B300334E9A /* DiaryRepository.swift */; };
-		4C37A0B52AC824C100334E9A /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0B42AC824C100334E9A /* WeatherModel.swift */; };
+		4C37A0B52AC824C100334E9A /* DiaryTablel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0B42AC824C100334E9A /* DiaryTablel.swift */; };
 		4C37A0B72AC82CA900334E9A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0B62AC82CA900334E9A /* HomeViewController.swift */; };
 		4C37A0B92AC82D7700334E9A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0B82AC82D7700334E9A /* MainViewController.swift */; };
 		4C37A0BB2AC82D8200334E9A /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0BA2AC82D8200334E9A /* DateViewController.swift */; };
@@ -53,13 +58,34 @@
 		4C6A08EF2ACADEAA00557CB1 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6A08EE2ACADEAA00557CB1 /* ListCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		10BB63842AD13F910040A0BB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		100B5D952AD1638E0058D57D /* MyOotdMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyOotdMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		100B5D962AD1A67D0058D57D /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
+		10BB636E2AD120860040A0BB /* NetworkBasic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkBasic.swift; path = MyOotdMemory/NetworkBasic.swift; sourceTree = SOURCE_ROOT; };
+		10BB63702AD122D40040A0BB /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Network.swift; path = MyOotdMemory/Network.swift; sourceTree = SOURCE_ROOT; };
+		10BB63772AD12A100040A0BB /* weatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherManager.swift; sourceTree = "<group>"; };
+		10BB63792AD12A4D0040A0BB /* wather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wather.swift; sourceTree = "<group>"; };
+		10BB637B2AD12A640040A0BB /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		10BB637D2AD12E470040A0BB /* WeatherTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTable.swift; sourceTree = "<group>"; };
+		10BB63852AD141A40040A0BB /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4C09E28C2ACBE3680060CCAE /* SubTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubTitleLabel.swift; sourceTree = "<group>"; };
 		4C30F0FF2ACC21A600B64475 /* dateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateFormatter.swift; sourceTree = "<group>"; };
 		4C30F1012ACC2EE400B64475 /* CreateTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTodayView.swift; sourceTree = "<group>"; };
 		4C30F1422ACD668C00B64475 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "MyOotdMemory/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4C30F1442ACD6F5300B64475 /* CreateTempCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTempCollectionCell.swift; sourceTree = "<group>"; };
-		4C37A0632ABF11FE00334E9A /* MyOotdMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyOotdMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C37A0662ABF11FE00334E9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C37A0682ABF11FE00334E9A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4C37A06A2ABF11FE00334E9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,12 +95,9 @@
 		4C37A0882ABF1E1800334E9A /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		4C37A08A2ABF1E2500334E9A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4C37A08F2ABF1F4E00334E9A /* ConstantsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsColor.swift; sourceTree = "<group>"; };
-		4C37A0AA2AC8207C00334E9A /* weatherManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weatherManager.swift; sourceTree = "<group>"; };
-		4C37A0AB2AC8207C00334E9A /* weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weather.swift; sourceTree = "<group>"; };
-		4C37A0AE2AC8208A00334E9A /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = ../../../../week5/SeSAC3Week5/SeSAC3Week5/Network/APIKey.swift; sourceTree = "<group>"; };
 		4C37A0B02AC8249D00334E9A /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
 		4C37A0B22AC824B300334E9A /* DiaryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryRepository.swift; sourceTree = "<group>"; };
-		4C37A0B42AC824C100334E9A /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		4C37A0B42AC824C100334E9A /* DiaryTablel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTablel.swift; sourceTree = "<group>"; };
 		4C37A0B62AC82CA900334E9A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4C37A0B82AC82D7700334E9A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4C37A0BA2AC82D8200334E9A /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +136,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10BB63762AD129F60040A0BB /* WeatherAPI */ = {
+			isa = PBXGroup;
+			children = (
+				10BB63772AD12A100040A0BB /* weatherManager.swift */,
+				10BB63792AD12A4D0040A0BB /* wather.swift */,
+				10BB637B2AD12A640040A0BB /* APIKey.swift */,
+			);
+			path = WeatherAPI;
+			sourceTree = "<group>";
+		};
 		4C09E28B2ACBE3370060CCAE /* item */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,22 +158,13 @@
 			isa = PBXGroup;
 			children = (
 				4C37A0652ABF11FE00334E9A /* MyOotdMemory */,
-				4C37A0642ABF11FE00334E9A /* Products */,
+				100B5D952AD1638E0058D57D /* MyOotdMemory.app */,
 			);
-			sourceTree = "<group>";
-		};
-		4C37A0642ABF11FE00334E9A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4C37A0632ABF11FE00334E9A /* MyOotdMemory.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		4C37A0652ABF11FE00334E9A /* MyOotdMemory */ = {
 			isa = PBXGroup;
 			children = (
-				4C37A0872ABF140700334E9A /* Observable */,
 				4C37A0862ABF13CD00334E9A /* Component */,
 				4C37A0842ABF137B00334E9A /* Scene */,
 				4C37A0822ABF134A00334E9A /* Base */,
@@ -156,7 +180,7 @@
 				4C37A0742ABF120000334E9A /* Info.plist */,
 			);
 			path = MyOotdMemory;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		4C37A07A2ABF126A00334E9A /* Home */ = {
 			isa = PBXGroup;
@@ -210,8 +234,10 @@
 		4C37A07F2ABF12B900334E9A /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				4C37A0AE2AC8208A00334E9A /* APIKey.swift */,
-				4C37A0A92AC8207C00334E9A /* weather */,
+				10BB63762AD129F60040A0BB /* WeatherAPI */,
+				10BB636E2AD120860040A0BB /* NetworkBasic.swift */,
+				10BB63702AD122D40040A0BB /* Network.swift */,
+				10BB63852AD141A40040A0BB /* Location.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -230,7 +256,9 @@
 			children = (
 				4C37A0B02AC8249D00334E9A /* DiaryModel.swift */,
 				4C37A0B22AC824B300334E9A /* DiaryRepository.swift */,
-				4C37A0B42AC824C100334E9A /* WeatherModel.swift */,
+				4C37A0B42AC824C100334E9A /* DiaryTablel.swift */,
+				10BB637D2AD12E470040A0BB /* WeatherTable.swift */,
+				100B5D962AD1A67D0058D57D /* WeatherRepository.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -282,23 +310,6 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
-		4C37A0872ABF140700334E9A /* Observable */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Observable;
-			sourceTree = "<group>";
-		};
-		4C37A0A92AC8207C00334E9A /* weather */ = {
-			isa = PBXGroup;
-			children = (
-				4C37A0AA2AC8207C00334E9A /* weatherManager.swift */,
-				4C37A0AB2AC8207C00334E9A /* weather.swift */,
-			);
-			name = weather;
-			path = ../../../../week5/SeSAC3Week5/SeSAC3Week5/weather;
-			sourceTree = "<group>";
-		};
 		4C37A0C02AC82DB900334E9A /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +330,7 @@
 				4C37A05F2ABF11FE00334E9A /* Sources */,
 				4C37A0602ABF11FE00334E9A /* Frameworks */,
 				4C37A0612ABF11FE00334E9A /* Resources */,
+				10BB63842AD13F910040A0BB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -337,7 +349,7 @@
 				4C30F13B2ACD631800B64475 /* FirebaseCrashlytics */,
 			);
 			productName = MyOotdMemory;
-			productReference = 4C37A0632ABF11FE00334E9A /* MyOotdMemory.app */;
+			productReference = 100B5D952AD1638E0058D57D /* MyOotdMemory.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -373,7 +385,7 @@
 				4C37A0C52AC881E300334E9A /* XCRemoteSwiftPackageReference "SnapKit" */,
 				4C30F1382ACD631800B64475 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
-			productRefGroup = 4C37A0642ABF11FE00334E9A /* Products */;
+			productRefGroup = 4C37A05A2ABF11FE00334E9A;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -400,36 +412,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C37A0AD2AC8207C00334E9A /* weather.swift in Sources */,
 				4C37A0D52AC9D5A500334E9A /* DateDiaryCollectionViewCell.swift in Sources */,
 				4C37A0BF2AC82D9600334E9A /* DetailViewController.swift in Sources */,
+				10BB637A2AD12A4D0040A0BB /* wather.swift in Sources */,
 				4C37A0B12AC8249D00334E9A /* DiaryModel.swift in Sources */,
 				4C37A0C42AC84CF700334E9A /* MainWeatherView.swift in Sources */,
+				10BB63712AD122D40040A0BB /* Network.swift in Sources */,
 				4C6A08ED2ACAD94500557CB1 /* ListCollectionView.swift in Sources */,
 				4C37A08B2ABF1E2500334E9A /* BaseViewController.swift in Sources */,
 				4C37A06B2ABF11FE00334E9A /* ViewController.swift in Sources */,
 				4C37A0672ABF11FE00334E9A /* AppDelegate.swift in Sources */,
 				4C37A0902ABF1F4E00334E9A /* ConstantsColor.swift in Sources */,
 				4C37A0D12AC9A6D000334E9A /* DateDiaryView.swift in Sources */,
-				4C37A0AC2AC8207C00334E9A /* weatherManager.swift in Sources */,
 				4C37A0B92AC82D7700334E9A /* MainViewController.swift in Sources */,
 				4C30F1022ACC2EE400B64475 /* CreateTodayView.swift in Sources */,
+				10BB63782AD12A100040A0BB /* weatherManager.swift in Sources */,
 				4C37A0BD2AC82D8D00334E9A /* CreateViewController.swift in Sources */,
 				4C30F1452ACD6F5300B64475 /* CreateTempCollectionCell.swift in Sources */,
+				10BB636F2AD120860040A0BB /* NetworkBasic.swift in Sources */,
 				4C37A0C92AC8851C00334E9A /* MainAdviceView.swift in Sources */,
 				4C37A0692ABF11FE00334E9A /* SceneDelegate.swift in Sources */,
-				4C37A0AF2AC8208A00334E9A /* APIKey.swift in Sources */,
 				4C09E28D2ACBE3680060CCAE /* SubTitleLabel.swift in Sources */,
 				4C37A0BB2AC82D8200334E9A /* DateViewController.swift in Sources */,
+				10BB63862AD141A40040A0BB /* Location.swift in Sources */,
 				4C37A0CD2AC8915600334E9A /* BaseCollectionViewCell.swift in Sources */,
 				4C30F1002ACC21A600B64475 /* dateFormatter.swift in Sources */,
 				4C37A0CF2AC89C8100334E9A /* MainAdviceScrollView.swift in Sources */,
+				10BB637E2AD12E470040A0BB /* WeatherTable.swift in Sources */,
 				4C37A0D72AC9D63400334E9A /* DateDiaryCollectionView.swift in Sources */,
 				4C37A0892ABF1E1800334E9A /* BaseView.swift in Sources */,
 				4C6A08EF2ACADEAA00557CB1 /* ListCollectionViewCell.swift in Sources */,
+				10BB637C2AD12A640040A0BB /* APIKey.swift in Sources */,
 				4C37A0C22AC82DCE00334E9A /* ListViewController.swift in Sources */,
-				4C37A0B52AC824C100334E9A /* WeatherModel.swift in Sources */,
+				4C37A0B52AC824C100334E9A /* DiaryTablel.swift in Sources */,
 				4C37A0CB2AC8888700334E9A /* MainAdviceCollectionViewCell.swift in Sources */,
+				100B5D972AD1A67D0058D57D /* WeatherRepository.swift in Sources */,
 				4C37A0B72AC82CA900334E9A /* HomeViewController.swift in Sources */,
 				4C37A0B32AC824B300334E9A /* DiaryRepository.swift in Sources */,
 			);
@@ -501,6 +518,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MyOotdMemory/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -558,6 +577,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MyOotdMemory/info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -579,10 +600,12 @@
 				DEVELOPMENT_TEAM = 847TUT63WB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyOotdMemory/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "앱에서 카메라를 사용하려고 합니다. 카메라에 접근 권한을 허용해주세요.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앱에서 사진첩의 사진을 선택하려고 합니다. 사진첩에 접근 권한을 허용해주세요.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -591,9 +614,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jae.214.MyOotdMemory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -607,10 +633,12 @@
 				DEVELOPMENT_TEAM = 847TUT63WB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyOotdMemory/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "앱에서 카메라를 사용하려고 합니다. 카메라에 접근 권한을 허용해주세요.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "앱에서 사진첩의 사진을 선택하려고 합니다. 사진첩에 접근 권한을 허용해주세요.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -619,9 +647,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jae.214.MyOotdMemory;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
