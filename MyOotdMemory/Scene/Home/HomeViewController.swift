@@ -6,38 +6,42 @@
 //
 
 import UIKit
+import SnapKit
 
 
 class HomeViewController: UITabBarController{
     let repository = DiaryTableRepository()
+    let customTitleView = UIView()
+    let customTitlelabel = UILabel()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTabBar()
         settingTabbar()
         settingNavBar()
         view.backgroundColor = Constants.BaseColor.backgroundGray
-
+        
     }
     
     func settingNavBar() {
-        self.navigationController?.isNavigationBarHidden = true
         title = "추천 옷차림"
         let navigationItem = self.navigationItem
-    
         let addButtonImg = UIImage(systemName: "square.and.pencil")
         let addButton = UIBarButtonItem(image: addButtonImg, style: .plain, target: self, action: #selector(addButtonClicked))
         addButton.tintColor = Constants.BaseColor.point
         navigationItem.rightBarButtonItem = addButton
+        customTitleView.backgroundColor = .clear
+        customTitlelabel.text = "추천 옷차림"
+        customTitlelabel.textColor =  Constants.BaseColor.text
+        customTitlelabel.font = UIFont(name: "SUITE-SemiBold", size: 20)
+        customTitlelabel.sizeToFit()
 
-        if let navigationBar = navigationController?.navigationBar {
-            let titleFont = UIFont(name: "SUITE-ExtraBold", size: 20) ?? UIFont.systemFont(ofSize: 20)
-             let titleColor = Constants.BaseColor.text
-            let titleTextAttributes: [NSAttributedString.Key: Any] = [
-                            .font: titleFont,
-                            .foregroundColor: titleColor
-                        ]
-            navigationBar.titleTextAttributes = titleTextAttributes
+        customTitleView.addSubview(customTitlelabel)
+        customTitlelabel.center = customTitleView.center
+        customTitlelabel.snp.makeConstraints { make in
+            make.size.equalToSuperview()
         }
+
+        navigationItem.titleView = customTitleView
     }
     
     @objc func addButtonClicked() {
@@ -52,7 +56,7 @@ class HomeViewController: UITabBarController{
         
     }
     func showAlert() {
-            let alertController = UIAlertController(title: "알림", message: "오늘 날짜에 이미 게시물이 있습니다. 게시물 수정을 하시겠습니까?", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "", message: "오늘 날짜에 이미 게시물이 있습니다. 게시물 수정을 하시겠습니까?", preferredStyle: .alert)
             
             // 액션 추가 (버튼 추가)
             let okAction = UIAlertAction(title: "확인", style: .default) { (action) in
@@ -75,7 +79,7 @@ class HomeViewController: UITabBarController{
    
         let MainVC = MainViewController()
         MainVC.tabBarItem = UITabBarItem(title: "추천 옷차림", image: UIImage(systemName: "thermometer.low"),selectedImage: UIImage(systemName: "thermometer.high"))
-        
+      
         // 기온 별 struct 선언해서 아이콘 다르게 보이게 하기?? thermometer.transmission
         
         let DateVC = DateViewController()
@@ -99,9 +103,10 @@ class HomeViewController: UITabBarController{
     }
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         title = item.title
-     
+        customTitlelabel.text = item.title
     }
     
 }
 
 
+extension HomeViewController : UINavigationControllerDelegate {}

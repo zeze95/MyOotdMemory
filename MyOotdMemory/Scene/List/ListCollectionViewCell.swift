@@ -8,6 +8,7 @@
 import UIKit
 
 class ListCollectionViewCell: BaseCollectionViewCell {
+   
     let imageView = {
         let view = UIImageView()
         return view
@@ -19,7 +20,8 @@ class ListCollectionViewCell: BaseCollectionViewCell {
     
     override func setConstraints() {
         imageView.snp.makeConstraints { make in
-            make.edges.equalTo(contentView)
+            make.top.leading.equalToSuperview().offset(16)
+            
         }
     }
 

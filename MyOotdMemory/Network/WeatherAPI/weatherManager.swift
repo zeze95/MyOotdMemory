@@ -18,7 +18,7 @@ class WeatherManager {
     func callRequestToday(city:CLLocationCoordinate2D ,success: @escaping (WeatherData) -> Void, failure: @escaping () -> Void ) {
         let lat = city.latitude
         let lon = city.longitude
-       let url = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&units=metric&appid=\(APIKey.weatherKey)&lang=kr"
+       let url = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&units=metric&appid=\(APIKey.weatherKey)"
         AF.request(url, method: .get).validate(statusCode: 200...500)
             .responseDecodable(of: WeatherData.self) { response in
                 

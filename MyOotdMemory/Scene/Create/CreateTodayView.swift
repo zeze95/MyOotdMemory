@@ -31,6 +31,7 @@ class CreateTodayView : BaseView {
         view.text = "비내리는 날"
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont(name: "SUITE-Regular", size: 17)
+        view.textColor = Constants.BaseColor.text
         return view
     }()
     

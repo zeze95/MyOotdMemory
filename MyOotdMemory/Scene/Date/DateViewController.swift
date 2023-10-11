@@ -42,6 +42,7 @@ class DateViewController: BaseViewController {
         myCalender.delegate = self
         myCalender.dataSource = self
         setCalendarUI()
+        navigationController?.navigationBar.backgroundColor = .clear
     }
   
     

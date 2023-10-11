@@ -89,6 +89,7 @@ class CreateViewController: BaseViewController {
     }()
     let textView : UITextView = {
         let view = UITextView()
+        view.textColor = Constants.BaseColor.text
         view.backgroundColor = Constants.BaseColor.backgroundColor
         view.layer.borderColor = Constants.BaseColor.border
         view.layer.borderWidth = 3
@@ -190,14 +191,10 @@ class CreateViewController: BaseViewController {
     }
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
             let newText = (textView.text as NSString).replacingCharacters(in: range, with: text)
-
-            // 글자 수가 제한을 초과하는 경우
             if newText.count > 35 {
-                // Toast 메시지를 표시합니다.
                 self.view.makeToast("글자 수 제한을 초과했습니다.(35자 이내)", duration: 2.0, position: .center)
                 return false
             }
-
             return true
         }
     

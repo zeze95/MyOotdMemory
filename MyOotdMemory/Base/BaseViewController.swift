@@ -18,8 +18,8 @@ class BaseViewController: UIViewController {
     
 
      func configureView(){
-         view.backgroundColor = Constants.BaseColor.backgroundColor
-         view.layer.backgroundColor = Constants.BaseColor.backgroundColor.cgColor
+         view.backgroundColor = Constants.BaseColor.backgroundGray
+         view.layer.backgroundColor = Constants.BaseColor.backgroundGray.cgColor
          view.tintColor = .black
 
          // 다크 모드 변경 하기,,,
@@ -27,5 +27,17 @@ class BaseViewController: UIViewController {
     func setConstraints(){
 
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+        navigationController?.navigationBar.barTintColor = Constants.BaseColor.backgroundGray
+        let titleFont = UIFont(name: "SUITE-SemiBold", size: 20)
+        let titleColor = Constants.BaseColor.text
+                let titleTextAttributes: [NSAttributedString.Key: Any] = [
+                    .font: titleFont!,
+                    .foregroundColor: titleColor
+                ]
+                navigationController?.navigationBar.titleTextAttributes = titleTextAttributes
+            
+       }
+    
 }

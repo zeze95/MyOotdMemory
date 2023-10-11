@@ -40,7 +40,6 @@ class MainViewController: BaseViewController {
         scrollWrapperView.addSubview(adviceView)
         locationManager.delegate = self
         checkDeviceLocationAuthrization()
-        
     }
     
     override func setConstraints() {
@@ -151,13 +150,16 @@ extension MainViewController: CLLocationManagerDelegate {
                     var scription: String = ""
                     WeatherManager.shared.callRequestToday(city: coordinate) { [self] data in
                         weatherData = data
+                        print(data)
                         if let firstWeatherElement = data.weather.first {
                             let weatherDescription = firstWeatherElement.description
                             scription = weatherDescription
                         }
                         let saveData = WeatherSave(humidity: String(data.main.humidity), temp: Int(data.main.temp), date: Date(), descrip: scription, clouds: data.clouds.all, coord: data.name)
                         repository.createItem(data: saveData)
-                        let contryName = contrySwaper.swap(contry:data.name)
+                        let contryName = contrySwaper.contrySwap(contry:data.name)
+                        let cityName = contrySwaper.swap(contry:data.name)
+                        
                         nowView.contryLabel.text = "\(contryName)"
                         nowView.nowWeather.text = "오늘 날씨 \(scription)"
                         nowView.nowTemp.text = "온도 \(Int(data.main.temp))°C 습도 \(String(data.main.humidity))%"
