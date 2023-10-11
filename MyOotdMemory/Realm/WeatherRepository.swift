@@ -16,6 +16,7 @@ class WeatherSaveRepository {
         do{
             let version = try schemaVersionAtURL(realm.configuration.fileURL!)
             print("schema Version:\(version) ")
+            print("위치:",realm.configuration.fileURL!)
         }catch{
             print(error)
         }
@@ -24,27 +25,27 @@ class WeatherSaveRepository {
     func fetchFilterDate(date: Date) -> Bool {
          let existingItem = realm.objects(WeatherSave.self).filter("date == %@", date)
          if existingItem.isEmpty {
-             return false
-         } else {
              return true
+         } else {
+             return false
          }
      }
-     
+
     
     func fetch() -> Results<WeatherSave>{
         let data = realm.objects(WeatherSave.self)
         return data
-    }
-    
+     }
+                                    
     func createItem(data: WeatherSave) {
-        try! realm.write {
-             realm.add(data , update: .modified)
+      try! realm.write {
+        realm.add(data , update: .modified)
+            }
         }
-    }
     
-    func deleteItem(data: WeatherSave ){
-        let itemsDelete = realm.objects(WeatherSave.self).filter("_id == %@", data._id)
-        // 검색된 객체 삭제
+    func deleteItem(date: Date){
+        let itemsDelete = realm.objects(WeatherSave.self).filter("date != %@", date)
+        
         try! realm.write {
             realm.delete(itemsDelete)
         }

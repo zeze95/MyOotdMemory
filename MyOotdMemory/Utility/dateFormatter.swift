@@ -20,4 +20,17 @@ extension DateFormatter {
     static func convertDate(date:Date) -> String {
         return format.string(from: date)
     }
+    static func dateCheck(from nowdate: Date) -> Bool {
+        let repo = WeatherSaveRepository()
+        let saveDate = repo.fetch()
+        if saveDate.isEmpty {
+            return true
+        }
+        let calendar = Calendar.current
+        if let difference = calendar.dateComponents([.hour], from: saveDate[0].date, to: nowdate).hour {
+
+            return difference >= 4 //true
+        }
+        return false
+    }
 }

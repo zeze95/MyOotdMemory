@@ -17,6 +17,10 @@ class CreateTempCollectionCell : BaseCollectionViewCell{
         let view = UIButton()
         view.setTitle("더워", for: .normal)
         view.setTitleColor(.black, for: .normal)
+        view.layer.borderWidth = 2
+        view.layer.borderColor = Constants.BaseColor.border
+        view.layer.cornerRadius = 5
+        view.clipsToBounds = true
         return view
     }()
     var buttonTitle :String = "더워"
@@ -28,12 +32,12 @@ class CreateTempCollectionCell : BaseCollectionViewCell{
     
     override func setConstraints() {
         backview.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-            make.width.equalTo(100)
-            make.height.equalTo(50)
+            make.top.leading.equalToSuperview()
+         
         }
         tempButton.snp.makeConstraints { make in
-            make.edges.equalTo(backview)
+            make.width.equalTo(70)
+            make.height.equalTo(40)
         }
     }
 }

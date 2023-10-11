@@ -15,17 +15,32 @@ class WeatherManager {
     static let shared = WeatherManager()
     private init() { }
     
-    func callRequestCodable(city:CLLocationCoordinate2D ,success: @escaping (WeatherData) -> Void, failure: @escaping () -> Void ) {
+    func callRequestToday(city:CLLocationCoordinate2D ,success: @escaping (WeatherData) -> Void, failure: @escaping () -> Void ) {
         let lat = city.latitude
-        let lon = -city.longitude
-       let url = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(APIKey.weatherKey)&lang=kr"
-//        let url = "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=\(APIKey.weatherKey)"
+        let lon = city.longitude
+       let url = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&units=metric&appid=\(APIKey.weatherKey)&lang=kr"
         AF.request(url, method: .get).validate(statusCode: 200...500)
             .responseDecodable(of: WeatherData.self) { response in
                 
                 switch response.result {
                 case .success(let value): success(value)
             
+                case .failure(let error):
+                    print(error)
+                    failure() //호출만 하겠다 (밖에서 쓰겠다)
+                }
+            }
+    }
+    func callRequestTomorrow(city:CLLocationCoordinate2D ,success: @escaping (WeatherData) -> Void, failure: @escaping () -> Void ) {
+        let lat = city.latitude
+        let lon = -city.longitude
+       let url = "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&exclude=current,minutely,hourly&units=metric&appid=\(APIKey.weatherKey)&lang=kr"
+        AF.request(url, method: .get).validate(statusCode: 200...500)
+            .responseDecodable(of: WeatherData.self) { response in
+                
+                switch response.result {
+                case .success(let value): success(value)
+                    // 코더블 오류 뜨면 다시 다시해야함 이거 미루자
                 case .failure(let error):
                     print(error)
                     failure() //호출만 하겠다 (밖에서 쓰겠다)

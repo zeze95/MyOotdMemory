@@ -13,15 +13,18 @@ class MainViewController: BaseViewController {
     var locationManager = CLLocationManager()
     var weatherData : WeatherData?
     let repository = WeatherSaveRepository()
+    let repositoryTomorrow = WeatherRepositoryTomorrow()
     var contry :String = "seoul"
+    var contrySwaper = contrySwap()
+    let icons = WeatherIconSwap()
+    
+    
     var scrollWrapperView : UIScrollView = {
         let view = UIScrollView()
-
         return view
     }()
-    let nowView : MainWeatherView = {
+    lazy var nowView : MainWeatherView = {
         let view = MainWeatherView(frame: .zero)
-        view.MainTF = true
         return view
     }()
     
@@ -30,21 +33,14 @@ class MainViewController: BaseViewController {
         return view
         // 밑에 줄 넣어서 구분할지 말지 나중에 정하기
     }()
-    let afterView : MainWeatherView = {
-        let view = MainWeatherView(frame: .zero)
-        view.MainTF = false
-        return view
-    }()
     
     override func configureView() {
         view.addSubview(scrollWrapperView)
         scrollWrapperView.addSubview(nowView)
-     
-        scrollWrapperView.addSubview(afterView)
         scrollWrapperView.addSubview(adviceView)
         locationManager.delegate = self
         checkDeviceLocationAuthrization()
-   
+        
     }
     
     override func setConstraints() {
@@ -55,21 +51,14 @@ class MainViewController: BaseViewController {
             make.top.equalTo(view.safeAreaLayoutGuide).offset(8)
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(16)
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
-            make.height.equalTo(110)
+            make.height.equalTo(140)
         
         }
         adviceView.snp.makeConstraints { make in
             make.top.equalTo(nowView.snp.bottom).offset(16)
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(16)
             make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
-            make.height.equalTo(250)
-        }
-        afterView.snp.makeConstraints { make in
-            make.top.equalTo(adviceView.snp.bottom).offset(16)
-            make.leading.equalTo(view.safeAreaLayoutGuide).offset(16)
-            make.trailing.equalTo(view.safeAreaLayoutGuide).inset(16)
-            make.bottom.equalTo(scrollWrapperView.snp.bottom)
-            make.height.equalTo(110)
+            make.height.equalTo(265)
         }
     }
     
@@ -128,11 +117,12 @@ class MainViewController: BaseViewController {
             
             present(alert, animated: true)
         }
-        
+
+    }
         
         
 
-    }
+
     
 
 
@@ -143,7 +133,7 @@ extension MainViewController: CLLocationManagerDelegate {
         print(#function)
         if let coordinate = locations.last?.coordinate { // 위도 경도 값 가져오기
             let geocoder = CLGeocoder()
-            let geo = CLLocation(latitude: coordinate.latitude, longitude: -coordinate.longitude)
+            let geo = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
             geocoder.reverseGeocodeLocation(geo) { (placemarks, error) in
                 if let placemark = placemarks?.first {
                     if let city = placemark.locality {
@@ -151,42 +141,49 @@ extension MainViewController: CLLocationManagerDelegate {
                     }
                 }
             }
-            if repository.fetchFilterDate(date: Date()) {
-                //날씨 API 호출
-    //            let center = CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.886270)
+            repository.checkSchemaVersion()
+            if repository.fetch().isEmpty {
+                
+            }
+            let dateCheck = DateFormatter.dateCheck(from: Date())
+            if dateCheck {
                 DispatchQueue.main.async {
-                    WeatherManager.shared.callRequestCodable(city: coordinate) { [self] data in
+                    var scription: String = ""
+                    WeatherManager.shared.callRequestToday(city: coordinate) { [self] data in
                         weatherData = data
-                        print(data)
-                    // 부르기 전에 realm에 오늘날짜로 저장된 것이 있는지 확인할 것
-                    // 없으면 호출하기
-                    //
-                        let saveData = WeatherSave(humidity: String(data.main.humidity), temp: data.main.temp, date: Date(), descrip: data.weather.description, clouds: data.clouds.all, coord: contry) // coord를 좌표가 아닌 구한 값으로넣어뒀음 나중에 수정하기
+                        if let firstWeatherElement = data.weather.first {
+                            let weatherDescription = firstWeatherElement.description
+                            scription = weatherDescription
+                        }
+                        let saveData = WeatherSave(humidity: String(data.main.humidity), temp: Int(data.main.temp), date: Date(), descrip: scription, clouds: data.clouds.all, coord: data.name)
                         repository.createItem(data: saveData)
+                        let contryName = contrySwaper.swap(contry:data.name)
+                        nowView.contryLabel.text = "\(contryName)"
+                        nowView.nowWeather.text = "오늘 날씨 \(scription)"
+                        nowView.nowTemp.text = "온도 \(Int(data.main.temp))°C 습도 \(String(data.main.humidity))%"
+                        let icon = icons.WeatherIcon(weather: scription)
+                        nowView.imgView.image = UIImage(named: icon)
                     } failure: {
                         print("오류")
                     }
+                   
                 }
             }else {
-                print("이미 오늘 날씨 있어") // 이 방법이 아니라 api calldelay를 써야할듯
-                // 처음 접속했을때! realm을 리드해서 시간이 3시간이 지났는지 체크하고! 만약 지났다면 그 realm을 지우고 재호출하는 방식으로!
+                print("이미 오늘 날씨 있어")
             }
-
+            
         }
         
         locationManager.stopUpdatingLocation() // 한번만 실행하고 싶을 때
     }
-    
-    //사용자의 위치를 가지고 오지 못한 경우
     
     
 
 
 // 위치 업데이트 실패 시 호출
 func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    print("=== 사용자 위치 가져오기 실패 ===", error)
+    print("= 사용자 위치 가져오기 실패=", error)
 }
-
 // 위치 권한 상태 변경 시 호출
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         print(#function)

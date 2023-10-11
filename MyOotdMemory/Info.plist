@@ -2,6 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SUITE-ExtraBold.ttf</string>
+		<string>SUITE-SemiBold.ttf</string>
+		<string>SUITE-Regular.ttf</string>
+		<string>SUITE-Medium.ttf</string>
+		<string>SUITE-Light.ttf</string>
+		<string>SUITE-Bold.ttf</string>
+	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>사진을 저장하기 위해서는 접근 허용이 필요합니다.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>사진을 촬영하기 위해서는 접근 허용이 필요합니다.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>날씨 정보를 제공하기 위해 위치정보가 필요합니다</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

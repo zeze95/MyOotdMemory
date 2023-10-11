@@ -41,10 +41,11 @@ class DiaryTableRepository: DiaryTableRepositoryType {
     
     //Reaml Create
     func createItem(_ item: DiaryTable) {
-        
+        let realItem = DiaryTable(date: item.date, temp: item.temp, weather: item.weather, feel: item.feel, summary: item.summary, photo: "Add_\(item._id).jpeg")
         do {
             try realm.write {
-                realm.add(item)
+
+                realm.add(realItem)
                 print("Realm Add Succeed")
             }
         } catch {
@@ -53,22 +54,48 @@ class DiaryTableRepository: DiaryTableRepositoryType {
     }
     
     //Reaml Update
-    func updateItem(id: ObjectId,feel:String ,photo: String, summary: String) {
+    func updateItem(id: ObjectId,feel:String ,photo: String?, summary: String) {
         do {
             try realm.write {
-                realm.create(DiaryTable.self, value: ["_id": id, "feel": feel ,"photo": photo, "summary": summary], update: .modified) //특정 테이블 값 변경
+                realm.create(DiaryTable.self, value: ["_id": id, "feel": feel ,"photo": "Add_\(id).jpeg", "summary": summary], update: .modified) //특정 테이블 값 변경
             }
         } catch {
             print("")
         }
         
     }
+    func fetchFilterDate(date:String) -> Bool {
+           let existingItem = realm.objects(DiaryTable.self).filter("date == %@", date)
+           if existingItem.isEmpty { // 빈값이면
+               return  true
+           } else {
+               return false // 있으면
+           }
+       }
+    func findTodayData(date:String)  -> Results<DiaryTable>{
+           let existingItem = realm.objects(DiaryTable.self).filter("date == %@", date)
+        return existingItem
+       }
     func deleteItem(id:ObjectId){
+        
         let itemsDelete = realm.objects(WeatherSave.self).filter("_id == %@", id)
         //  객체 삭제
+        
         try! realm.write {
             realm.delete(itemsDelete)
         }
+        removeImageFromDocument(fileName: "Add_\(id).jpeg")
     }
-    
+    func removeImageFromDocument(fileName: String) {
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        //2. 저장할 경로 설정(세부 경로, 이미지를 저장되어 있는 위치)
+        let fileURL = documentDirectory.appendingPathComponent(fileName)
+        
+        do {
+            try FileManager.default.removeItem(at: fileURL)
+        } catch {
+            print(error)
+        }
+        
+    }
 }

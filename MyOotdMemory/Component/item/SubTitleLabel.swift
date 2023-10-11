@@ -13,9 +13,10 @@ class SubTitleLabel :UIView  {
 
      init(text: String) {
          label = UILabel()
-         label.font = UIFont.boldSystemFont(ofSize: 17)
+//         label.font = UIFont.boldSystemFont(ofSize: 17)
          label.text = text
          label.textColor = Constants.BaseColor.text
+         label.font = UIFont(name: "SUITE-SemiBold", size: 19)
          super.init(frame: .zero)
          addSubview(label)
      }

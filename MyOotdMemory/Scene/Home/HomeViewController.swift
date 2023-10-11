@@ -9,13 +9,13 @@ import UIKit
 
 
 class HomeViewController: UITabBarController{
-
+    let repository = DiaryTableRepository()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTabBar()
         settingTabbar()
         settingNavBar()
-        view.backgroundColor = Constants.BaseColor.backgroundColor
+        view.backgroundColor = Constants.BaseColor.backgroundGray
 
     }
     
@@ -26,25 +26,53 @@ class HomeViewController: UITabBarController{
     
         let addButtonImg = UIImage(systemName: "square.and.pencil")
         let addButton = UIBarButtonItem(image: addButtonImg, style: .plain, target: self, action: #selector(addButtonClicked))
-        addButton.tintColor = .red
+        addButton.tintColor = Constants.BaseColor.point
         navigationItem.rightBarButtonItem = addButton
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
 
+        if let navigationBar = navigationController?.navigationBar {
+            let titleFont = UIFont(name: "SUITE-ExtraBold", size: 20) ?? UIFont.systemFont(ofSize: 20)
+             let titleColor = Constants.BaseColor.text
+            let titleTextAttributes: [NSAttributedString.Key: Any] = [
+                            .font: titleFont,
+                            .foregroundColor: titleColor
+                        ]
+            navigationBar.titleTextAttributes = titleTextAttributes
+        }
     }
     
     @objc func addButtonClicked() {
-        // 오른쪽 버튼(Add 버튼)이 탭됐을 때의 동작 구현
-        // 여기서 오늘 중으로 글쓴 것이 있는지 확인하고 오늘 것을 수정하시겠습니까?
-        // 다른 날짜의 글을 쓰시겠습니까 물어보는 알럿 띄우ㅠ기
+        let check = repository.fetchFilterDate(date: DateFormatter.today())
         
-        navigationController?.pushViewController(CreateViewController(), animated: true)
-  
+        if check {
+            navigationController?.pushViewController(CreateViewController(), animated: true)
+        }else {
+            showAlert()
+        }
+        
+        
     }
+    func showAlert() {
+            let alertController = UIAlertController(title: "알림", message: "오늘 날짜에 이미 게시물이 있습니다. 게시물 수정을 하시겠습니까?", preferredStyle: .alert)
+            
+            // 액션 추가 (버튼 추가)
+            let okAction = UIAlertAction(title: "확인", style: .default) { (action) in
+                // 확인 버튼을 눌렀을 때 실행할 코드 작성
+                let editVC = CreateViewController()
+                editVC.isEdit = true
+                editVC.editDate = "\(DateFormatter.today())"
+                self.navigationController?.pushViewController(editVC, animated: true)
+            }
+            let cancelAction = UIAlertAction(title: "취소", style: .cancel) { (action) in
+            }
+            alertController.addAction(okAction)
+            alertController.addAction(cancelAction)
+            
+            // 알럿을 현재 뷰 컨트롤러에 표시
+            present(alertController, animated: true, completion: nil)
+        }
     
     func configureTabBar(){
-        tabBar.tintColor = .black
-        let tabBarColor = UIColor(red: 252.0 / 255.0, green: 180.0  / 255.0, blue: 130.0 / 255.0, alpha: 1.0)
-        tabBar.backgroundColor = Constants.BaseColor.backgroundColorAlpha
+   
         let MainVC = MainViewController()
         MainVC.tabBarItem = UITabBarItem(title: "추천 옷차림", image: UIImage(systemName: "thermometer.low"),selectedImage: UIImage(systemName: "thermometer.high"))
         
@@ -61,9 +89,11 @@ class HomeViewController: UITabBarController{
         setViewControllers([MainVC, DateVC, ListVC], animated: true)
     }
     func settingTabbar(){
+        tabBar.tintColor = Constants.BaseColor.background
+        tabBar.backgroundColor = Constants.BaseColor.backgroundBlack
         let apperance = UITabBarAppearance()
         apperance.configureWithTransparentBackground()
-        apperance.backgroundColor = .white
+        apperance.backgroundColor = Constants.BaseColor.backgroundBlack
         tabBar.standardAppearance = apperance
        
     }

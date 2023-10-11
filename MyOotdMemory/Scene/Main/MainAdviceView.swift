@@ -45,7 +45,7 @@ class MainAdviceView: BaseView {
             make.height.equalTo(18)
         }
         adviceCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(subTitle.snp.bottom).offset(4)
+            make.top.equalTo(subTitle.snp.bottom).offset(19)
             make.leading.equalTo(subTitle.snp.leading)
             make.trailing.equalTo(subTitle.snp.trailing)
             make.bottom.equalToSuperview()

@@ -21,6 +21,7 @@ class BaseViewController: UIViewController {
          view.backgroundColor = Constants.BaseColor.backgroundColor
          view.layer.backgroundColor = Constants.BaseColor.backgroundColor.cgColor
          view.tintColor = .black
+
          // 다크 모드 변경 하기,,,
     }
     func setConstraints(){
