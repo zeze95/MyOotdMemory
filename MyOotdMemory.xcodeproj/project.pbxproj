@@ -52,7 +52,7 @@
 		4C37A0A82AC8200900334E9A /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 4C37A0A72AC8200900334E9A /* FSCalendar */; };
 		4C37A0B12AC8249D00334E9A /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0B02AC8249D00334E9A /* DiaryModel.swift */; };
 		4C37A0B32AC824B300334E9A /* DiaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0B22AC824B300334E9A /* DiaryRepository.swift */; };
-		4C37A0B52AC824C100334E9A /* DiaryTablel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0B42AC824C100334E9A /* DiaryTablel.swift */; };
+		4C37A0B52AC824C100334E9A /* DiaryTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0B42AC824C100334E9A /* DiaryTable.swift */; };
 		4C37A0B72AC82CA900334E9A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0B62AC82CA900334E9A /* HomeViewController.swift */; };
 		4C37A0B92AC82D7700334E9A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0B82AC82D7700334E9A /* MainViewController.swift */; };
 		4C37A0BB2AC82D8200334E9A /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0BA2AC82D8200334E9A /* DateViewController.swift */; };
@@ -70,6 +70,8 @@
 		4C37A0D72AC9D63400334E9A /* DateDiaryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37A0D62AC9D63400334E9A /* DateDiaryCollectionView.swift */; };
 		4C6A08ED2ACAD94500557CB1 /* ListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6A08EC2ACAD94500557CB1 /* ListCollectionView.swift */; };
 		4C6A08EF2ACADEAA00557CB1 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6A08EE2ACADEAA00557CB1 /* ListCollectionViewCell.swift */; };
+		4C99EFA52AD791DD0080DB89 /* alagotext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99EFA42AD791DD0080DB89 /* alagotext.swift */; };
+		4C99EFA72AD7B7EA0080DB89 /* WeatherWordSwap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C99EFA62AD7B7E90080DB89 /* WeatherWordSwap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -125,7 +127,7 @@
 		4C37A08F2ABF1F4E00334E9A /* ConstantsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsColor.swift; sourceTree = "<group>"; };
 		4C37A0B02AC8249D00334E9A /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
 		4C37A0B22AC824B300334E9A /* DiaryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryRepository.swift; sourceTree = "<group>"; };
-		4C37A0B42AC824C100334E9A /* DiaryTablel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTablel.swift; sourceTree = "<group>"; };
+		4C37A0B42AC824C100334E9A /* DiaryTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTable.swift; sourceTree = "<group>"; };
 		4C37A0B62AC82CA900334E9A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4C37A0B82AC82D7700334E9A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4C37A0BA2AC82D8200334E9A /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,8 @@
 		4C37A0D62AC9D63400334E9A /* DateDiaryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDiaryCollectionView.swift; sourceTree = "<group>"; };
 		4C6A08EC2ACAD94500557CB1 /* ListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionView.swift; sourceTree = "<group>"; };
 		4C6A08EE2ACADEAA00557CB1 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
+		4C99EFA42AD791DD0080DB89 /* alagotext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alagotext.swift; sourceTree = "<group>"; };
+		4C99EFA62AD7B7E90080DB89 /* WeatherWordSwap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWordSwap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +226,7 @@
 				4C37A0712ABF120000334E9A /* LaunchScreen.storyboard */,
 				103D14112AD3F5DE00D68BA0 /* LaunchScreenViewController.swift */,
 				4C37A0742ABF120000334E9A /* Info.plist */,
+				4C99EFA42AD791DD0080DB89 /* alagotext.swift */,
 			);
 			path = MyOotdMemory;
 			sourceTree = SOURCE_ROOT;
@@ -295,6 +300,7 @@
 				103D14172AD423AA00D68BA0 /* contrySwap.swift */,
 				103D14192AD43F2100D68BA0 /* WeatherIconSwap.swift */,
 				103D142A2AD510B800D68BA0 /* tempSwap.swift */,
+				4C99EFA62AD7B7E90080DB89 /* WeatherWordSwap.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -304,7 +310,7 @@
 			children = (
 				4C37A0B02AC8249D00334E9A /* DiaryModel.swift */,
 				4C37A0B22AC824B300334E9A /* DiaryRepository.swift */,
-				4C37A0B42AC824C100334E9A /* DiaryTablel.swift */,
+				4C37A0B42AC824C100334E9A /* DiaryTable.swift */,
 				10BB637D2AD12E470040A0BB /* WeatherTable.swift */,
 				100B5D962AD1A67D0058D57D /* WeatherRepository.swift */,
 				103D14132AD4219B00D68BA0 /* WeatherTableTomorrow.swift */,
@@ -472,6 +478,7 @@
 				4C37A0D52AC9D5A500334E9A /* DateDiaryCollectionViewCell.swift in Sources */,
 				4C37A0BF2AC82D9600334E9A /* DetailViewController.swift in Sources */,
 				103D14142AD4219B00D68BA0 /* WeatherTableTomorrow.swift in Sources */,
+				4C99EFA52AD791DD0080DB89 /* alagotext.swift in Sources */,
 				10BB637A2AD12A4D0040A0BB /* wather.swift in Sources */,
 				4C37A0B12AC8249D00334E9A /* DiaryModel.swift in Sources */,
 				103D14182AD423AA00D68BA0 /* contrySwap.swift in Sources */,
@@ -505,12 +512,13 @@
 				4C6A08EF2ACADEAA00557CB1 /* ListCollectionViewCell.swift in Sources */,
 				10BB637C2AD12A640040A0BB /* APIKey.swift in Sources */,
 				4C37A0C22AC82DCE00334E9A /* ListViewController.swift in Sources */,
-				4C37A0B52AC824C100334E9A /* DiaryTablel.swift in Sources */,
+				4C37A0B52AC824C100334E9A /* DiaryTable.swift in Sources */,
 				4C37A0CB2AC8888700334E9A /* MainAdviceCollectionViewCell.swift in Sources */,
 				103D14162AD4225900D68BA0 /* WeatherRepositoryTomorrow.swift in Sources */,
 				100B5D972AD1A67D0058D57D /* WeatherRepository.swift in Sources */,
 				4C37A0B72AC82CA900334E9A /* HomeViewController.swift in Sources */,
 				103D14122AD3F5DE00D68BA0 /* LaunchScreenViewController.swift in Sources */,
+				4C99EFA72AD7B7EA0080DB89 /* WeatherWordSwap.swift in Sources */,
 				103D141A2AD43F2100D68BA0 /* WeatherIconSwap.swift in Sources */,
 				4C37A0B32AC824B300334E9A /* DiaryRepository.swift in Sources */,
 			);
