@@ -3,7 +3,8 @@
 ![메인화면](https://github.com/user-attachments/assets/c7367091-746f-4217-b280-81dd4f354f1a)
 
 메인 화면
-현재 사용자의 위치를 확인해 기온을 가져와 기온별 옷차림을 보여준다
+현재 사용자의 위치를 확인해 현재 기온을 가져오고
+저장해둔 데이터에서 기온별 추천 옷차림을 보여준다
 
 
 ![글등록](https://github.com/user-attachments/assets/ff6ede23-17c2-45a8-8b22-f7ade3136324)
